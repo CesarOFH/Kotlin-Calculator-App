@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="calculator_background">#000000</color>
+
+    <color name="calculator_text">#FFFFFF</color>
+
+    <color name="calculator_secondary_text">#BFC3C7</color>
+
+</resources>

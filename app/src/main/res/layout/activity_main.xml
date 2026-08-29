@@ -5,15 +5,317 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/calculator_background"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="18dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </LinearLayout>
+
+    <Space
+        android:id="@+id/Space"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topBar"
+        tools:ignore="MissingConstraints" />
+
+    <!-- screen -->
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:id="@+id/Camp_Ing"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
+        android:ellipsize="start"
+        android:gravity="top|end"
+        android:maxLines="1"
+        android:padding="8dp"
+        android:textColor="@color/calculator_text"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Space"
+        tools:ignore="VisualLintSystemUi" />
+
+    <!-- result / operation -->
+    <TextView
+        android:id="@+id/Camp_result"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
+        android:ellipsize="start"
+        android:gravity="center|end"
+        android:maxLines="1"
+        android:padding="8dp"
+        android:textColor="@color/calculator_secondary_text"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Camp_Ing" />
+
+    <Space
+        android:id="@+id/Space1"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Camp_result"
+        tools:ignore="MissingConstraints" />
+
+
+    <!-- buttons -->
+    <GridLayout
+        android:id="@+id/gridButtons"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="15dp"
+        android:alignmentMode="alignMargins"
+        android:columnCount="4"
+        android:rowCount="5"
+        android:useDefaultMargins="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/Space1">
+
+        <!-- FILA 1 -->
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnClear"
+            style="@style/CalculatorButton"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:background="@drawable/buttons"
+            android:text="@string/clear"
+            android:textColor="#EF5350"
+            tools:ignore="VisualLintButtonSize" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnDelete"
+            style="@style/CalculatorButton"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:background="@drawable/buttons"
+            android:text="@string/delete"
+            android:textColor="#EF5350"
+            tools:ignore="VisualLintButtonSize" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnPercent"
+            style="@style/CalculatorButton"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:background="@drawable/buttons"
+            android:text="@string/percent"
+            tools:ignore="VisualLintButtonSize" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnDivide"
+            style="@style/CalculatorButton"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:background="@drawable/button_operator"
+            android:text="@string/divide_by"
+            tools:ignore="VisualLintButtonSize" />
+
+        <!-- FILA 2 -->
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn7"
+            style="@style/CalculatorButton"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:background="@drawable/buttons"
+            android:text="@string/seven"
+            tools:ignore="VisualLintButtonSize" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn8"
+            style="@style/CalculatorButton"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:background="@drawable/buttons"
+            android:text="@string/eight"
+            tools:ignore="VisualLintButtonSize" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn9"
+            style="@style/CalculatorButton"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:background="@drawable/buttons"
+            android:text="@string/nine"
+            tools:ignore="VisualLintButtonSize" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnMultiply"
+            style="@style/CalculatorButton"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:background="@drawable/button_operator"
+            android:text="@string/multiply"
+            tools:ignore="VisualLintButtonSize" />
+
+        <!-- FILA 3 -->
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn4"
+            style="@style/CalculatorButton"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:background="@drawable/buttons"
+            android:text="@string/four"
+            tools:ignore="VisualLintButtonSize" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn5"
+            style="@style/CalculatorButton"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:background="@drawable/buttons"
+            android:text="@string/five"
+            tools:ignore="VisualLintButtonSize" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn6"
+            style="@style/CalculatorButton"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:background="@drawable/buttons"
+            android:text="@string/six"
+            tools:ignore="VisualLintButtonSize" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnMinus"
+            style="@style/CalculatorButton"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:background="@drawable/button_operator"
+            android:text="@string/minus"
+            tools:ignore="VisualLintButtonSize" />
+
+        <!-- FILA 4 -->
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn1"
+            style="@style/CalculatorButton"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:background="@drawable/buttons"
+            android:text="@string/one"
+            tools:ignore="VisualLintButtonSize" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn2"
+            style="@style/CalculatorButton"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:background="@drawable/buttons"
+            android:text="@string/two"
+            tools:ignore="VisualLintButtonSize" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn3"
+            style="@style/CalculatorButton"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:background="@drawable/buttons"
+            android:text="@string/three"
+            tools:ignore="VisualLintButtonSize" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnPlus"
+            style="@style/CalculatorButton"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:background="@drawable/button_operator"
+            android:text="@string/plus"
+            tools:ignore="VisualLintButtonSize" />
+
+        <!-- FILA 5 -->
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnParentheses"
+            style="@style/CalculatorButton"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:background="@drawable/buttons"
+            android:text="@string/parentheses"
+            android:visibility="invisible"
+            android:enabled="false"
+            tools:ignore="VisualLintButtonSize" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn0"
+            style="@style/CalculatorButton"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:background="@drawable/buttons"
+            android:text="@string/zero"
+            tools:ignore="VisualLintButtonSize" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnPoint"
+            style="@style/CalculatorButton"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:background="@drawable/buttons"
+            android:text="@string/point"
+            tools:ignore="VisualLintButtonSize" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnEquals"
+            style="@style/CalculatorButtonEqual"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:background="@drawable/button_equals"
+            android:text="@string/equals"
+            tools:ignore="VisualLintButtonSize" />
+
+    </GridLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
