@@ -282,6 +282,8 @@
             android:layout_margin="8dp"
             android:background="@drawable/buttons"
             android:text="@string/parentheses"
+            android:visibility="invisible"
+            android:enabled="false"
             tools:ignore="VisualLintButtonSize" />
 
         <androidx.appcompat.widget.AppCompatButton
